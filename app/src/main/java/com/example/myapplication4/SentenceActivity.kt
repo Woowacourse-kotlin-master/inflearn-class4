@@ -1,6 +1,7 @@
 package com.example.myapplication4
 
 import android.os.Bundle
+import android.widget.ListView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -17,6 +18,19 @@ class SentenceActivity : AppCompatActivity() {
             insets
         }
 
+        val sentenceList = mutableListOf<String>()
+        sentenceList.add("모아이 디그다")
+        sentenceList.add("우럭 디그다")
+        sentenceList.add("성괴 디그다")
+        sentenceList.add("아싸 디그다")
+        sentenceList.add("원조 디그다")
+        sentenceList.add("디콩 디그다")
+        sentenceList.add("빵빵 디그다")
+
+        val adapter = ListViewAdapter(sentenceList)
+        val listview = findViewById<ListView>(R.id.sentenceListView)
+
+        listview.adapter = adapter
 
     }
 }
